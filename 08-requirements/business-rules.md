@@ -12,6 +12,7 @@ Define atomic, testable statements of business policy — constraints and condit
 | BRule-03 | Cancellation is permitted only before an order has shipped; once shipped, cancellation is not allowed. *Note: current operational enforcement is unreliable (see P5/P6/P6a). Whether the enforceable cutoff should instead be "picking list generation" rather than literal shipment is an open question for Business Owner/Operations — see Scope document's open questions.* | Priya (Support Lead) |
 | BRule-04 | A returned item identified as damaged during inspection must not be counted as sellable stock. | BR-04 |
 | BRule-05 | A return cannot be processed by Finance until a return reason has been captured from the customer. | BR-05 |
+| BRule-06 | A submitted return reason cannot be edited or deleted by any viewer (Warehouse, Finance, Support) once submitted. | US-08 |
 
 ## Pending Business Rules (Awaiting Decision)
 
