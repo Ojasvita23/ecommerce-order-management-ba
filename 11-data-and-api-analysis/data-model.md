@@ -14,7 +14,7 @@ erDiagram
     PRODUCT ||--o{ ORDER_ITEM : "appears in"
     PRODUCT ||--|| INVENTORY : "stocked as"
 
-    ORDER_ITEM ||--o{ RETURN : "returned via"
+    ORDER_ITEM ||--o| RETURN : "returned via"
     RETURN ||--o| INSPECTION : "inspected in"
     RETURN ||--o| REFUND : "refunded by"
     ORDER ||--o| REFUND : "cancellation refund"
@@ -83,6 +83,7 @@ erDiagram
 - Refund is "zero or one" per order for cancellations, which assumes full cancellations only.
 - Refund status values are a proposal. Bank settlement is deliberately not tracked, because it is outside ShopKart's control.
 - FR-06.1 says the system initiates a refund after approval, while BRule-01 says Finance initiates it. The model records the Finance user as the approver. The two requirement files should be aligned.
+- A Return covers a whole Order Item (zero or one per item). If an item with quantity above 1 can be partly returned, this becomes zero or many, and partial returns would need to be scoped in first.
 
 ## Notes on Methodology
 - Entities came from reading each FR and Use Case for the business nouns it needs, not from a blank page.
